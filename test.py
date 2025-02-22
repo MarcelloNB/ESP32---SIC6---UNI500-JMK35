@@ -53,14 +53,14 @@ def mantap():
 # def data():
 
 
-@app.route('/sensor1/temperature/avg', methods=['GET'])
-def avg():
-    if request.method == 'GET':
-        if not list_temp :
-            return jsonify({"average temperature" : None})
+# @app.route('/sensor1/temperature/avg', methods=['GET'])
+# def avg():
+#     if request.method == 'GET':
+#         if not store_data() :
+#             return jsonify({"average temperature" : None})
         
-        AVG_temp = sum(entry["Temperature"] for entry in list_temp) / len(list_temp)
-        return jsonify({"Average Temp" : AVG_temp}) 
+#         AVG_temp = sum(entry["Temperature"] for entry in store_data) / len(store_data)
+#         return jsonify({"Average Temp" : AVG_temp}) 
     
 if __name__ == '__main__':
-    app.run(debug=True, port=1280)
+    app.run(host='0.0.0.0',debug=True, port=1280)
